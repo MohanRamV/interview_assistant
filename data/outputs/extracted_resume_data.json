@@ -1,0 +1,116 @@
+{
+  "contact_info": {
+    "name": "Mohan  Ram Vemuri",
+    "email": "mohanramvemuri@gmail.com",
+    "phone": "",
+    "address": "",
+    "linkedin": "",
+    "github": ""
+  },
+  "education": [
+    {
+      "degree": "Master of Science (MS) in Engineering  Data Science",
+      "institution": "• UNIVERSITY OF HOUSTON , USA(GPA 3.76 /4.0) May  2025",
+      "year": "",
+      "gpa": ""
+    },
+    {
+      "degree": "Bachelor of Technology  - Electronics  and Communication  Engineering",
+      "institution": "• I was a recipient of the Engineering Dean’s Masters Scholarship  at the University of Houston,",
+      "year": "",
+      "gpa": ""
+    },
+    {
+      "degree": "• I was a recipient of the Engineering Dean’s Masters Scholarship  at the University of Houston,",
+      "institution": "",
+      "year": "",
+      "gpa": ""
+    }
+  ],
+  "experience": [
+    {
+      "company": "",
+      "position": "UNIVERSITY OF HOUSTON  - GRADUATE ASSISTANT   SEPT 2024  – MAR 2025",
+      "duration": "UNIVERSITY OF HOUSTON  - GRADUATE ASSISTANT   SEPT 2024  – MAR 2025",
+      "responsibilities": [
+        "Designed and developed an AI -driven bot to assist researchers and faculty in efficiently identifying",
+        "Built an AgenticAI  biomedical search engine using modular LLM agents to perform tasks like",
+        "Implemented a RAG framework using Gemini -2.0-Flash LLM to dynamically retrieve metadata from",
+        "Created a streamlit based UI for user queries and chatbot responses. Implemented LLMOps  best"
+      ]
+    },
+    {
+      "company": "",
+      "position": "FIDELITY INFORMATION SERVICES (FIS GLOBAL)  - LEAD  ENGINEER                   AUG  2021  – AUG 2023",
+      "duration": "FIDELITY INFORMATION SERVICES (FIS GLOBAL)  - LEAD  ENGINEER                   AUG  2021  – AUG 2023",
+      "responsibilities": []
+    },
+    {
+      "company": "",
+      "position": "• Engineered a Python-  and PowerShell -based automation framework to monitor ~1,000 distributed",
+      "duration": "• Engineered a Python-  and PowerShell -based automation framework to monitor ~1,000 distributed",
+      "responsibilities": [
+        "Collaborated with AI engineers to build a cross -platform conversational AI system that verifies faulty",
+        "Integrated C# application that works on Integrated  Front  EndAPI  for data migration to Mainframe.",
+        "Containerized monitoring agents with Docker and implemented CI/CD workflows using Jenkins and",
+        "Leveraged the Decisions RPA platform to automate rule- based validation across IT and financial",
+        "Created mainframe- compatible text files from validated datasets and securely uploaded them to",
+        "Orchestrated weekly batch jobs to initiate mainframe updates and used Python scripts to parse logs,",
+        "Developed ServiceNow bot integration for real -time ITSM compliance, automatically generating",
+        "Enabled high availability and disaster recovery by backing up logs and reports to AWS S3, supporting"
+      ]
+    },
+    {
+      "company": "",
+      "position": "WIPRO  LTD, INDIA - SENIOR PROJECT  ENGINEER             MAY  2018 – AUG  2021",
+      "duration": "WIPRO  LTD, INDIA - SENIOR PROJECT  ENGINEER             MAY  2018 – AUG  2021",
+      "responsibilities": [
+        "Designed and automated high- performance testing pipelines for enterprise -grade storage systems (up to",
+        "Migrated legacy test frameworks to Python, enabling structured system introspection and real -time",
+        "Developed robust batch automation workflows for remote drive qualification using Linux virtualization environments and cron -based scheduling, simulating complex distributed systems behavior.",
+        "Engineered performance regression pipelines that generated logs, performed trend analysis, and auto -",
+        "Built and maintained structured test data repositories, supporting long- term analytics and predictive",
+        "Collaborated in Agile sprints with DevOps and hardware teams, efficiently communicating bugs via Jira and contributing to cross -functional troubleshooting and resolution.",
+        "Maintained scalable testbed infrastructure for virtualization and device emulation, enabling repeatable system qualification and performance benchmarking."
+      ]
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "python",
+      "sql",
+      "java",
+      "r",
+      "c#",
+      "go",
+      "scala"
+    ],
+    "frameworks": [
+      "pytorch",
+      "pandas",
+      "tensorflow",
+      "flask"
+    ],
+    "databases": [
+      "mysql"
+    ],
+    "tools": [
+      "aws",
+      "docker",
+      "git",
+      "jenkins",
+      "jira",
+      "azure",
+      "confluence"
+    ],
+    "soft_skills": [
+      "agile",
+      "communication"
+    ]
+  },
+  "projects": [],
+  "certifications": [],
+  "languages": [],
+  "summary": "",
+  "parsed_date": "2025-07-07T15:56:50.845291"
+}

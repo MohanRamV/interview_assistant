@@ -1,0 +1,21 @@
+You are an expert resume parser.
+
+From the following text, extract:
+- Name
+- Email
+- Phone
+- Skills
+- Work Experience (title, company, duration, responsibilities)
+- Projects (title, tools, description)
+- Education (degree, university, year)
+- Certifications
+- Awards
+- Patents
+- Hobbies
+
+Return valid JSON.
+
+Resume Text:
+"""
+{{RESUME_TEXT}}
+"""

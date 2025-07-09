@@ -1,0 +1,15 @@
+You are an AI interview assistant.
+
+Given this candidate profile and job role, generate 5 adaptive, role-specific interview questions.
+Focus on skills, responsibilities, or technologies that are important or missing.
+
+Return questions as a numbered list.
+
+Candidate Profile:
+{{RESUME_DATA}}
+
+Job Role:
+{{JD_DATA}}
+
+Comparison Summary:
+{{GAP_DATA}}

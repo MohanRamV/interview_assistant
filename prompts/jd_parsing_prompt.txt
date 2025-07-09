@@ -1,0 +1,17 @@
+You are an expert job description parser.
+
+Extract the following fields from the job description and return a JSON object:
+- Role Title
+- Required Skills
+- Preferred Skills
+- Responsibilities
+- Tools and Platforms
+- Domain
+- Required Education
+
+Return only valid JSON.
+
+Job Description:
+"""
+{{JD_TEXT}}
+"""
