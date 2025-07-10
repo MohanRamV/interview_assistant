@@ -5,20 +5,9 @@ def detect_tone_and_suggest_style(answer: str) -> dict:
     """
     Use Gemini to detect tone/confidence and suggest agent style.
     """
-    prompt = f"""
-    Analyze the following candidate answer.
+    prompt = f"""Analyze tone and suggest interviewer style for: "{answer}"
 
-    1. What is the emotional tone? (e.g., confident, unsure, formal, casual)
-    2. Does the candidate sound confident?
-    3. Suggest how the AI interviewer should respond: more supportive, more formal, or more challenging.
-
-    Answer:
-    \"\"\"
-    {answer}
-    \"\"\"
-
-    Return as JSON.
-    """
+Return JSON: {{"tone": "confident/unsure", "suggestion": "supportive/formal/challenging"}}"""
 
     response = model.generate_content(prompt)
 

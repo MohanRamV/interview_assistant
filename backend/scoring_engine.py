@@ -1,31 +1,53 @@
 import json
-from backend.llm_client import model
+from backend.llm_client import model, clean_llm_json
 
 def score_candidate_answer(question: str, answer: str) -> dict:
     """
     Score the candidate's answer based on interview rubrics.
     """
-    prompt = f"""
-    You are an AI interview evaluator.
+    prompt = f"""Rate this interview answer (0-5 each): clarity, relevance, technical_depth, confidence.
 
-    Based on the following question and answer, rate the candidate on:
-    - Clarity (0–5)
-    - Relevance to question (0–5)
-    - Technical depth (0–5)
-    - Confidence/tone (0–5)
+SCORING GUIDELINES:
+- Clarity (0-5): How well the answer is communicated and structured
+- Relevance (0-5): How well the answer addresses the question asked
+- Technical_depth (0-5): Level of technical detail and expertise shown
+- Confidence (0-5): How confidently and assertively the answer is delivered
 
-    Provide a short comment and return as JSON.
+ONLY assign 0 scores if the answer is completely irrelevant, contains only filler words, or is clearly a placeholder (like 'asdf', 'lorem ipsum', or repeated characters).
 
-    Question:
-    {question}
+For any reasonable attempt to answer, start with at least 1-2 points and adjust based on quality.
 
-    Answer:
-    {answer}
-    """
+Return JSON only:
+{{
+    "clarity": 4,
+    "relevance": 3,
+    "technical_depth": 4,
+    "confidence": 3,
+    "comment": "Brief comment"
+}}
 
-    response = model.generate_content(prompt)
+Q: {question}
+A: {answer}"""
 
     try:
-        return json.loads(response.text.replace("```json", "").replace("```", "").strip())
-    except:
-        return {"error": "Could not parse Gemini score", "raw_output": response.text}
+        response = model.generate_content(prompt)
+        cleaned_response = clean_llm_json(response.text)
+        result = json.loads(cleaned_response)
+        # Ensure all required fields are present with default values
+        return {
+            "clarity": result.get("clarity", 2),  # Default to 2 for reasonable baseline
+            "relevance": result.get("relevance", 2),  # Default to 2 for reasonable baseline
+            "technical_depth": result.get("technical_depth", 2),  # Default to 2 for reasonable baseline
+            "confidence": result.get("confidence", 2),  # Default to 2 for reasonable baseline
+            "comment": result.get("comment", "No comment available")
+        }
+    except Exception as e:
+        print(f"Scoring error: {e}")
+        # Return reasonable default scores if parsing fails
+        return {
+            "clarity": 2,
+            "relevance": 2,
+            "technical_depth": 2,
+            "confidence": 2,
+            "comment": "Scoring failed - using default values"
+        }

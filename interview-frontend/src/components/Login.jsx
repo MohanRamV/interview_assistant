@@ -3,7 +3,7 @@ import { useState } from "react";
 const Login = ({ onLogin, onSignupClick }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,58 +29,95 @@ const Login = ({ onLogin, onSignupClick }) => {
   };
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "400px", margin: "auto", textAlign: "center" }}>
-      <h2>Sign In</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={inputStyle}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={inputStyle}
-        />
-        <button type="submit" style={buttonStyle}>Login</button>
-      </form>
-      <p style={{ marginTop: "1rem" }}>
-        Don’t have an account?{" "}
-        <button onClick={onSignupClick} style={linkButton}>Sign Up</button>
-      </p>
+    <div style={styles.container}>
+      <div style={styles.card}>
+        <h2 style={styles.title}>Sign In</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            style={styles.input}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={styles.input}
+          />
+          <button type="submit" style={styles.button}>Login</button>
+        </form>
+        <p style={styles.signupText}>
+          Don't have an account?{" "}
+          <button onClick={onSignupClick} style={styles.linkButton}>Sign Up</button>
+        </p>
+      </div>
     </div>
   );
 };
 
-const inputStyle = {
-  width: "100%",
-  padding: "10px",
-  marginBottom: "1rem",
-  border: "1px solid #ccc",
-  borderRadius: "5px",
-};
-
-const buttonStyle = {
-  padding: "10px 20px",
-  backgroundColor: "#0d6efd",
-  color: "#fff",
-  border: "none",
-  borderRadius: "5px",
-  cursor: "pointer",
-};
-
-const linkButton = {
-  background: "none",
-  border: "none",
-  color: "#0d6efd",
-  textDecoration: "underline",
-  cursor: "pointer",
+const styles = {
+  container: {
+    padding: "20px",
+    fontFamily: "Segoe UI, sans-serif",
+    background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    color: "white",
+    minHeight: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  card: {
+    backgroundColor: "rgba(0, 0, 0, 0.6)",
+    padding: "40px",
+    borderRadius: "20px",
+    textAlign: "center",
+    maxWidth: "400px",
+    width: "100%",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
+  },
+  title: {
+    marginBottom: "30px",
+    fontSize: "2rem",
+  },
+  input: {
+    width: "100%",
+    padding: "12px",
+    marginBottom: "15px",
+    border: "none",
+    borderRadius: "8px",
+    fontSize: "1rem",
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
+  },
+  button: {
+    width: "100%",
+    padding: "12px 20px",
+    backgroundColor: "#4CAF50",
+    color: "white",
+    border: "none",
+    borderRadius: "8px",
+    cursor: "pointer",
+    fontSize: "1rem",
+    fontWeight: "bold",
+    marginBottom: "20px",
+  },
+  signupText: {
+    margin: 0,
+    fontSize: "1rem",
+  },
+  linkButton: {
+    background: "none",
+    border: "none",
+    color: "#4CAF50",
+    textDecoration: "underline",
+    cursor: "pointer",
+    fontSize: "1rem",
+    fontWeight: "bold",
+  },
 };
 
 export default Login;

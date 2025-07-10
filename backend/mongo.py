@@ -8,3 +8,5 @@ client = MongoClient(os.getenv("MONGO_URI"))
 db = client["interview_agent"]
 sessions = db["sessions"]
 users = db["users"]
+parsed_resumes = db["parsed_resumes"]
+parsed_jds = db["parsed_jds"]
